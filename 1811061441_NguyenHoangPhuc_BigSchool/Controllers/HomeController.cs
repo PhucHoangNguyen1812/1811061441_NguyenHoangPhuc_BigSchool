@@ -21,9 +21,6 @@ namespace _1811061441_NguyenHoangPhuc_BigSchool.Controllers
                 .Include(c => c.Lecturer)
                 .Include(c => c.Category)
                 .Where(c => c.DateTime > DateTime.Now);
-
-
-
             return View(upcommingCourses);
 
 
