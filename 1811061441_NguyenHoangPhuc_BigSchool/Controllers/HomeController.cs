@@ -1,4 +1,5 @@
 ﻿using _1811061441_NguyenHoangPhuc_BigSchool.Models;
+using _1811061441_NguyenHoangPhuc_BigSchool.ViewModels;
 using System;
 using System.Data.Entity;
 using System.Linq;
@@ -18,10 +19,17 @@ namespace _1811061441_NguyenHoangPhuc_BigSchool.Controllers
         public ActionResult Index()
         {
             var upcommingCourses = _dbContext.Courses
+
                 .Include(c => c.Lecturer)
                 .Include(c => c.Category)
                 .Where(c => c.DateTime > DateTime.Now);
-            return View(upcommingCourses);
+
+            var viewModel = new CoursesViewModel
+            {
+                UpcomingCourses = upcommingCourses,
+                ShowAction = User.Identity.IsAuthenticated
+            };
+            return View(viewModel);
 
 
         }

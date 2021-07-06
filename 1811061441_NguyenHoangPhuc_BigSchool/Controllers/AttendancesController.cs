@@ -1,4 +1,5 @@
-﻿using _1811061441_NguyenHoangPhuc_BigSchool.Models;
+﻿using _1811061441_NguyenHoangPhuc_BigSchool.DTOs;
+using _1811061441_NguyenHoangPhuc_BigSchool.Models;
 using Microsoft.AspNet.Identity;
 using System.Linq;
 using System.Web.Http;
@@ -15,15 +16,15 @@ namespace _1811061441_NguyenHoangPhuc_BigSchool.Controllers
         }
 
         [HttpPost]
-        public IHttpActionResult Attend([FromBody] int courseId)
+        public IHttpActionResult Attend(AttendanceDto attendanceDto)
         {
             // test Api them dk Attendances
             var userId = User.Identity.GetUserId();
-            if (_dbContext.Attendances.Any(a => a.AttendeeId == userId && a.CourseId == courseId))
+            if (_dbContext.Attendances.Any(a => a.AttendeeId == userId && a.CourseId == attendanceDto.CourseId))
                 return BadRequest("The Attendance already exists!");
             var attendance = new Attendance
             {
-                CourseId = courseId,
+                CourseId = attendanceDto.CourseId,
                 AttendeeId = userId
 
             };

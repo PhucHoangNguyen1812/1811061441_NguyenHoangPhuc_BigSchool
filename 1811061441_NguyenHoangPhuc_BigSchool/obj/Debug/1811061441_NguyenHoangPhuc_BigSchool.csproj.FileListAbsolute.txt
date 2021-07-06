@@ -109,7 +109,6 @@ D:\code C#\1811061441_NguyenHoangPhuc_BigSchool\1811061441_NguyenHoangPhuc_BigSc
 D:\code C#\1811061441_NguyenHoangPhuc_BigSchool\1811061441_NguyenHoangPhuc_BigSchool\obj\Debug\1811061441_NguyenHoangPhuc_BigSchool.csproj.GenerateResource.cache
 D:\code C#\1811061441_NguyenHoangPhuc_BigSchool\1811061441_NguyenHoangPhuc_BigSchool\obj\Debug\_1811061441_NguyenHoangPhuc_BigSchool.Migrations.CreateTableCourse.resources
 D:\code C#\1811061441_NguyenHoangPhuc_BigSchool\1811061441_NguyenHoangPhuc_BigSchool\obj\Debug\_1811061441_NguyenHoangPhuc_BigSchool.Migrations.PopulateCategoryTable.resources
-D:\code C#\1811061441_NguyenHoangPhuc_BigSchool\1811061441_NguyenHoangPhuc_BigSchool\obj\Debug\1811061441_NguyenHoangPhuc_BigSchool.csproj.AssemblyReference.cache
 D:\code C#\1811061441_NguyenHoangPhuc_BigSchool\1811061441_NguyenHoangPhuc_BigSchool\obj\Debug\_1811061441_NguyenHoangPhuc_BigSchool.Migrations.AddNameColumnToApplicationUser.resources
 D:\code C#\1811061441_NguyenHoangPhuc_BigSchool\1811061441_NguyenHoangPhuc_BigSchool\obj\Debug\_1811061441_NguyenHoangPhuc_BigSchool.Migrations.AddAttendance.resources
 D:\code C#\1811061441_NguyenHoangPhuc_BigSchool\1811061441_NguyenHoangPhuc_BigSchool\bin\System.Net.Http.Formatting.dll
@@ -118,3 +117,4 @@ D:\code C#\1811061441_NguyenHoangPhuc_BigSchool\1811061441_NguyenHoangPhuc_BigSc
 D:\code C#\1811061441_NguyenHoangPhuc_BigSchool\1811061441_NguyenHoangPhuc_BigSchool\bin\System.Net.Http.Formatting.xml
 D:\code C#\1811061441_NguyenHoangPhuc_BigSchool\1811061441_NguyenHoangPhuc_BigSchool\bin\System.Web.Http.xml
 D:\code C#\1811061441_NguyenHoangPhuc_BigSchool\1811061441_NguyenHoangPhuc_BigSchool\bin\System.Web.Http.WebHost.xml
+D:\code C#\1811061441_NguyenHoangPhuc_BigSchool\1811061441_NguyenHoangPhuc_BigSchool\obj\Debug\_1811061441_NguyenHoangPhuc_BigSchool.Migrations.AddFollowingsTable.resources

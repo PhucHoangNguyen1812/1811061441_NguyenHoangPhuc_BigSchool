@@ -1,14 +1,15 @@
 ﻿@model _1811061441_NguyenHoangPhuc_BigSchool.ViewModels.CoursesViewModel
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Attending";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<ul class="course" >
-    @foreach(var course in Model.UpcomingCourses)
+<h2>Attending</h2>
+<ul class="course">
+    @foreach (var course in Model.UpcomingCourses)
     {
         <li>
-            
-            <div class="date" >
+
+            <div class="date">
                 <div class="month">
                     @course.DateTime.ToString("MM")
                 </div>
@@ -16,7 +17,7 @@
                     @course.DateTime.ToString("dd")
                 </div>
             </div>
-            
+
             <div class="details">
 
                 <span class="lecturer">
@@ -72,3 +73,4 @@
         });
     </script>
 }
+
