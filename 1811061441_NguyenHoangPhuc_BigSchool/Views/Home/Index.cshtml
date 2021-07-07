@@ -1,4 +1,6 @@
 ﻿@model _1811061441_NguyenHoangPhuc_BigSchool.ViewModels.CoursesViewModel
+@using Microsoft.AspNet.Identity;
+@using _1811061441_NguyenHoangPhuc_BigSchool.Models
 @{
     ViewBag.Title = "Home Page";
 }
@@ -34,7 +36,18 @@
                 </span>
                 @if (Model.ShowAction)
                 {
-                    <button data-course-id="@course.Id" class="btn btn-default btn-sm js-toggle-attendance">Going?</button>
+                    var User_ID = User.Identity.GetUserId();
+                    ApplicationDbContext _dbContext = new ApplicationDbContext();
+                    bool go = _dbContext.Attendances.Any(a => a.CourseId == course.Id && a.AttendeeId == User_ID);
+                    if (go)
+                    {
+                        <button data-course-id="@course.Id" class="btn btn-info btn-sm js-toggle-attendance">Going</button>
+                    }
+                    else
+                    {
+                        <button data-course-id="@course.Id" class="btn btn-default btn-sm js-toggle-attendance">Going?</button>
+                    }
+                    
                 }
             </div>
         </li>

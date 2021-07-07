@@ -67,5 +67,16 @@ namespace _1811061441_NguyenHoangPhuc_BigSchool.Controllers
             };
             return View(viewModel);
         }
+
+        [Authorize]
+        public ActionResult Following()
+        {
+            var userId = User.Identity.GetUserId();
+            var viewModel = _dbContext.Followings
+                .Where(a => a.FollowerId == userId)
+                .Select(a => a.Followee)
+                .ToList();
+            return View(viewModel);
+        }
     }
 }

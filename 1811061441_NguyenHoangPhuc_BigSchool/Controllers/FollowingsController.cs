@@ -33,5 +33,22 @@ namespace _1811061441_NguyenHoangPhuc_BigSchool.Controllers
             return Ok();
 
         }
+
+        [HttpDelete]
+
+        public IHttpActionResult DeleteFollow(string Id)
+        {
+            var userId = User.Identity.GetUserId();
+            var following = _dbContext.Followings.SingleOrDefault(f => f.FollowerId == userId && f.FolloweeId == Id);
+            if (following == null)
+            {
+                return NotFound();
+            }
+
+            _dbContext.Followings.Remove(following);
+            _dbContext.SaveChanges();
+            return Ok(Id);
+        }
+        //bo tham gia dang ky khoa hoc
     }
 }
