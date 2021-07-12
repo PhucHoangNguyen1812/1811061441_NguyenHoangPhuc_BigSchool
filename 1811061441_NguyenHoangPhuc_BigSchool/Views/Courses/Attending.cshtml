@@ -24,12 +24,14 @@
 
                 <span class="lecturer">
                     @course.Lecturer.Name
-                    @if (Model.ShowAction)
-                    {
-                        <button class="btn btn-default btn-sm js-toggle-follow" data-user-id="@course.LecturerId">
-                            Follow
-                        </button>
-                    }
+                    @if(course.IsCanceled)
+                     {
+                        <span class=" label label-warning">Canceled</span>
+                     }
+                    @if(Model.ShowAction && !course.IsCanceled)
+                     {
+                        <button class="btn btn-link btn-sm js-toggle-follow" data-user-id="@course.LecturerId">Follow</button>   
+                     }
                 </span>
                 <br />
                 <span class="category">

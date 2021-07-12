@@ -7,7 +7,7 @@ namespace _1811061441_NguyenHoangPhuc_BigSchool.Models
     {
         public int Id { get; set; }
 
-        // public bool IsCanceled { get; set; }
+        public bool IsCanceled { get; set; }
 
         public ApplicationUser Lecturer { get; set; }
         [Required]
