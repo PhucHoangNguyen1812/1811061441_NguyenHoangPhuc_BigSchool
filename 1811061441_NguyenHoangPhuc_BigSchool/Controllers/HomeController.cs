@@ -16,20 +16,43 @@ namespace _1811061441_NguyenHoangPhuc_BigSchool.Controllers
             _dbContext = new ApplicationDbContext();
         }
 
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
-            var upcommingCourses = _dbContext.Courses
 
-                .Include(c => c.Lecturer)
-                .Include(c => c.Category)
-                .Where(c => c.DateTime > DateTime.Now);
 
-            var viewModel = new CoursesViewModel
+
+            if (!string.IsNullOrEmpty(searchString))
             {
-                UpcomingCourses = upcommingCourses,
-                ShowAction = User.Identity.IsAuthenticated
-            };
-            return View(viewModel);
+
+                var upcommingCourses = _dbContext.Courses.Where(x => x.Place.Contains(searchString))
+
+                  .Include(c => c.Lecturer)
+                  .Include(c => c.Category)
+                  .Where(c => c.DateTime > DateTime.Now);
+
+                var viewModel = new CoursesViewModel
+                {
+                    UpcomingCourses = upcommingCourses,
+                    ShowAction = User.Identity.IsAuthenticated
+                };
+                return View(viewModel);
+            }
+            else
+            {
+                var upcommingCourses = _dbContext.Courses
+
+                     .Include(c => c.Lecturer)
+                     .Include(c => c.Category)
+                     .Where(c => c.DateTime > DateTime.Now);
+
+                var viewModel = new CoursesViewModel
+                {
+                    UpcomingCourses = upcommingCourses,
+                    ShowAction = User.Identity.IsAuthenticated
+                };
+                return View(viewModel);
+            }
+
 
 
         }
